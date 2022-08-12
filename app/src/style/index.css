@@ -125,44 +125,44 @@ a{
 }
 
 .box0{
-    border-right: 0.5rem solid  aliceblue;
-    border-bottom: 0.5rem solid  aliceblue;
+    border-right: 0.3rem solid  aliceblue;
+    border-bottom: 0.3rem solid  aliceblue;
 }
 .box1{
-    border-right: 0.5rem solid  aliceblue;
-    border-bottom: 0.5rem solid  aliceblue;
-    border-left: 0.5rem solid  aliceblue;
+    border-right: 0.3rem solid  aliceblue;
+    border-bottom: 0.3rem solid  aliceblue;
+    border-left: 0.3rem solid  aliceblue;
 }
 .box2{
-    border-left: 0.5rem solid  aliceblue;
-    border-bottom: 0.5rem solid  aliceblue;
+    border-left: 0.3rem solid  aliceblue;
+    border-bottom: 0.3rem solid  aliceblue;
 }
 .box3{
-    border-top: 0.5rem solid  aliceblue;
-    border-bottom: 0.5rem solid  aliceblue;
-    border-right: 0.5rem solid  aliceblue;
+    border-top: 0.3rem solid  aliceblue;
+    border-bottom: 0.3rem solid  aliceblue;
+    border-right: 0.3rem solid  aliceblue;
 }
 .box4{
-    border: 0.5rem solid  aliceblue;
+    border: 0.3rem solid  aliceblue;
 }
 .box5{
-    border-top: 0.5rem solid  aliceblue;
-    border-bottom: 0.5rem solid  aliceblue;
-    border-left: 0.5rem solid  aliceblue;
+    border-top: 0.3rem solid  aliceblue;
+    border-bottom: 0.3rem solid  aliceblue;
+    border-left: 0.3rem solid  aliceblue;
 }
 .box6{
-    border-top: 0.5rem solid  aliceblue;
-    border-right: 0.5rem solid  aliceblue;
+    border-top: 0.3rem solid  aliceblue;
+    border-right: 0.3rem solid  aliceblue;
   
 }
 .box7{
-    border-top: 0.5rem solid  aliceblue;
-    border-left: 0.5rem solid  aliceblue;
-    border-right: 0.5rem solid  aliceblue;
+    border-top: 0.3rem solid  aliceblue;
+    border-left: 0.3rem solid  aliceblue;
+    border-right: 0.3rem solid  aliceblue;
 }
 .box8{
-    border-top: 0.5rem solid  aliceblue;
-    border-left: 0.5rem solid  aliceblue;
+    border-top: 0.3rem solid  aliceblue;
+    border-left: 0.3rem solid  aliceblue;
 }
 .plate{
     display: flex;
@@ -175,19 +175,13 @@ h1{
     text-align: center;
     color: aliceblue;
 }
-h2{
-    padding-top: 2rem;
-    font-size: 2rem;
-    text-align: center;
-    color: aliceblue;
-}
 h3{
     font-size: 7rem;
     color: aliceblue;
     font-weight: 900;
 }
 section{
-    padding: 3rem;
+    padding: 1rem;
     width: 70%;
 }
 main{
@@ -195,11 +189,66 @@ main{
     flex-direction: column;
     align-items: center;
 }
+
+
+@media only screen and (max-width:760px){
+    button{
+        font-size: 1.5rem;
+        font-weight: 900;
+        background-color: rgb(220, 239, 255);
+        border: 5px solid black;
+        border-radius: 10px;
+    }
+    section{
+        padding: 1rem 0;
+        padding-bottom: 4rem;
+        width: 100%;
+    }
+    h3{
+        font-size: 4rem;
+        color: aliceblue;
+        font-weight: 900;
+    }
+    .card{
+       
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+}
+
+.btn-section{
+    width: 100%;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+}
 button{
-    width: 10%;
+    display: flex;
     font-size: 1.5rem;
     font-weight: 900;
     background-color: rgb(220, 239, 255);
     border: 5px solid black;
     border-radius: 10px;
+}
+h4{
+    font-size: 1.5rem;
+}
+article{
+    color: rgb(163, 163, 163);
+    font-size: 2.5rem;
+    text-align: center;
+    display: flex;
+    padding: 1rem 0;
+}
+article span{
+    padding: 0 1rem;
+}
+
+.active{
+    color: rgb(255, 113, 113);
 }
