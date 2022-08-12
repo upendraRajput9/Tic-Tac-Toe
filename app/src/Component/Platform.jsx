@@ -43,7 +43,7 @@ export default class PlatForm extends Component {
     }
   };
 
-  handleCheck = () => {
+  handleCheck = async () => {
     let winner = this.winner();
     let forTie = this.state.cards.filter((elm) => elm !== 'X' && elm !== 'O');
     if (winner) {
@@ -56,14 +56,13 @@ export default class PlatForm extends Component {
         });
         alert(`😎 ${winner} Player is the Winner`);
       }, 500);
-    } else if (forTie.length === 0 && !winner) {
-      setTimeout(() => {
+    } else if (forTie.length===0) {
         alert(`Match is tie`);
         this.setState({
+            cards: Array(9).fill(null),
+            chance: true,
           tieScore: this.state.tieScore + 1,
-          cards: Array(9).fill(null),
         });
-      }, 500);
     }
   };
   //Winner Function
