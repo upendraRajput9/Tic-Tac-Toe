@@ -25,7 +25,8 @@ export default class PlatForm extends Component {
       this.setState((prevState) => ({
         chance: !prevState.chance,
       }));
-      if (!player) {
+      let winner = this.winner();
+      if (!player && !winner) {
         this.state.cards.forEach((elm, index) =>
           elm !== 'X' && elm !== 'O' ? unfillCard.push(index) : ''
         );
@@ -40,22 +41,20 @@ export default class PlatForm extends Component {
         }, 500);
       }
     }
-    this.handleCheck();
   };
-
-  // componenetDid Update
 
   handleCheck = () => {
     let winner = this.winner();
     let forTie = this.state.cards.filter((elm) => elm !== 'X' && elm !== 'O');
     if (winner) {
       setTimeout(() => {
-        alert(`😎 ${winner} Player is the Winner`);
         this.setState({
+          chance: true,
           scoreO: winner === 'O' ? this.state.scoreO + 1 : this.state.scoreO,
           scoreX: winner === 'X' ? this.state.scoreX + 1 : this.state.scoreX,
           cards: Array(9).fill(null),
         });
+        alert(`😎 ${winner} Player is the Winner`);
       }, 500);
     } else if (forTie.length === 0 && !winner) {
       setTimeout(() => {
@@ -67,11 +66,9 @@ export default class PlatForm extends Component {
       }, 500);
     }
   };
-
   //Winner Function
   winner = () => {
     let { cards } = this.state;
-    console.log(cards);
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
@@ -91,11 +88,15 @@ export default class PlatForm extends Component {
     return null;
   };
 
+  // componenetDid Update
+
+  componentDidUpdate() {
+    this.handleCheck();
+  }
+
   //render Page
   render() {
-    console.log(this.state.tieScore, this.state.scoreO, this.state.scoreX);
     let { cards } = this.state;
-
     return (
       <>
         <header>
